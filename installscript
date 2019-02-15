@@ -225,10 +225,10 @@ else
 			4_tweak) 
 				#Install monitor move window script Xfce
 				echo "Downloading Monitor move window script"
-				wget https://raw.githubusercontent.com/dasgeekchannel/move-to-next-monitor/master/move-to-next-monitor -O /home/$USER/Documents/move-to-next-monitor
+				wget https://raw.githubusercontent.com/dasgeekchannel/move-to-next-monitor/master/move-to-next-monitor -O /home/$user/Documents/move-to-next-monitor
 				chmod +x ~/Documents/move-to-next-monitor
-		    	chown -R $USER:$USER ~/Documents/move-to-next-monitor
-		    	echo "Script now resides at /home/$USER/Documents/move-to-next-monitor"
+		    	chown -R $user:$user ~/Documents/move-to-next-monitor
+		    	echo "Script now resides at /home/$user/Documents/move-to-next-monitor"
 				sleep 1
 				;;
 
@@ -254,11 +254,11 @@ else
 				#customize and theme
 				$install lxappearance menulibre 
 				sleep 2
-				mkdir /home/$USER/.config/i3
+				mkdir /home/$user/.config/i3
 				sleep 2
-				wget https://github.com/dasgeekchannel/i3wmFedora28Config/raw/master/i3wallpaper.png -O /home/$USER/Pictures/i3wallpaper.png
-				wget https://raw.githubusercontent.com/dasgeekchannel/i3wmFedora28Config/master/compton.conf -O /home/$USER/.config/compton.conf
-                wget https://raw.githubusercontent.com/dasgeekchannel/i3wmFedora28Config/master/config -O  /home/$USER/.config/i3/config
+				wget https://github.com/dasgeekchannel/i3wmFedora28Config/raw/master/i3wallpaper.png -O /home/$user/Pictures/i3wallpaper.png
+				wget https://raw.githubusercontent.com/dasgeekchannel/i3wmFedora28Config/master/compton.conf -O /home/$user/.config/compton.conf
+                wget https://raw.githubusercontent.com/dasgeekchannel/i3wmFedora28Config/master/config -O  /home/$user/.config/i3/config
                 		sleep 2
                 		wget https://github.com/dasgeekchannel/i3wmFedora28Config/raw/master/xfce4.zip
                 		#wget https://github.com/dasgeekchannel/i3wmFedora28Config/archive/master.zip
@@ -266,10 +266,10 @@ else
                 		unzip xfce4.zip
                 		sleep 2
                 		#move current xfce settings to xfce4backup
-                		mv /home/$USER/.config/xfce4 /home/$USER/.config/xfce4backup
+                		mv /home/$user/.config/xfce4 /home/$user/.config/xfce4backup
                 		#moves downloaded xfce4 config in place
                 		sleep 2
-                		mv xfce4 /home/$USER/.config/
+                		mv xfce4 /home/$user/.config/
                 sleep 2
                 wget https://github.com/dasgeekchannel/i3wmFedora28Config/raw/master/xfce4.zip
                 #wget https://github.com/dasgeekchannel/i3wmFedora28Config/archive/master.zip
@@ -277,15 +277,15 @@ else
                 unzip xfce4.zip
                 sleep 2
                 #move current xfce settings to xfce4backup
-                mv /home/$USER/.config/xfce4 /home/$USER/.config/xfce4backup
+                mv /home/$user/.config/xfce4 /home/$user/.config/xfce4backup
                 #moves downloaded xfce4 config in place
                 sleep 2
-                mv xfce4 /home/$USER/.config/
+                mv xfce4 /home/$user/.config/
 				sleep 2
-				chown -R $USER:$USER /home/$USER/.config/compton.conf
-				chown -R $USER:$USER /home/$USER/Pictures/i3wallpaper.png
-				chown -R $USER:$USER /home/$USER/.config/xfce4
-				chown -R $USER:$USER /home/$USER/.config/i3
+				chown -R $user:$user /home/$user/.config/compton.conf
+				chown -R $user:$user /home/$user/Pictures/i3wallpaper.png
+				chown -R $user:$user /home/$user/.config/xfce4
+				chown -R $user:$user /home/$user/.config/i3
 				;;
 
 # Section E -------------media---------------------
@@ -444,7 +444,7 @@ else
 				tar -xzf piavpn.tar.gz
 				mv pia-v81-installer-linux.sh piavpn.sh
 				chmod +x piavpn.sh
-				chown -R $USER:$USER $tmp_dir/.pia_manager
+				chown -R $user:$user $tmp_dir/.pia_manager
 				$tmp_dir/piavpn.sh
 				sleep 5
 				#rm -rf piavpn.tar.gz
@@ -474,14 +474,14 @@ else
 				# Install it
 				dpkg -i kxstudio-repos_9.5.1~kxstudio3_all.deb
 				dpkg -i kxstudio-repos-gcc5_9.5.1~kxstudio3_all.deb
-				usermod -a -G audio $USER
+				usermod -a -G audio $user
 				$update
 				$install jackd2 jackd2-firewire carla-git cadence non-mixer pulseaudio-module-jack mididings 
 				# Download auto script github
 				mkdir ~/jacksetup
 				wget -O ~/jacksetup/start_jack.sh https://raw.githubusercontent.com/Skrappjaw/audio-scripts/master/start_jack.sh
 				chmod +x ~/jacksetup/start_jack.sh
-				chown -R $USER:$USER ~/jacksetup
+				chown -R $user:$user ~/jacksetup
 				# Optional to put script into autostart
 				#cd ~/
 				#cp ~/jacksetup/start_jack.sh /etc/init.d/
@@ -497,7 +497,7 @@ else
 				unzip ~/Downloads/etcher.zip
 				mv etcher-*.AppImage etcher.AppImage
 				chmod +x ~/Downloads/etcher.AppImage
-				ln -s /home/$USER/Downloads/etcher.AppImage /usr/local/bin/etcher
+				ln -s /home/$user/Downloads/etcher.AppImage /usr/local/bin/etcher
 				sleep 1
 				;;
 
@@ -568,7 +568,7 @@ else
 				$install qemu-kvm libvirt-bin bridge-utils virt-manager virtinst virt-viewer firewalld ebtables iptables qemu libspice-client-gtk-3.0-dev  
 				sleep 1
 				addgroup libvirtd
-				adduser $USER libvirtd
+				adduser $user libvirtd
 				systemctl restart libvirtd
 				sleep 1
 				;;
@@ -650,7 +650,7 @@ else
 				#SnapCraft
 				$install snapcraft build-essential 
 				mkdir -p ~/mysnaps
-				chown -R $USER:$USER ~/mysnaps
+				chown -R $user:$user ~/mysnaps
 				;;
 
 			1_gaming)
